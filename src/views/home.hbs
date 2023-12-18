@@ -1,0 +1,16 @@
+<h1>Productos disponibles</h1>
+<div>
+    {{#each products}}
+        <li>
+            Titulo:{{this.title}},
+                <ul>
+                    Descripcion:{{this.description}},
+                    Precio:{{this.price}},
+                    Stock:{{this.stock}}
+                    Categoria:{{this.category}}
+                </ul>
+            <button>Agregar al carrito</button>
+        </li>
+    {{/each}}
+</div>
+<script src="./../public/js/home.js"></script>

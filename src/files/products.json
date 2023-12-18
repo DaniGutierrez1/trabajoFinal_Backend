@@ -1,0 +1,56 @@
+[
+	{
+		"id": 1,
+		"title": "mouse",
+		"description": "inalambrico",
+		"code": 23,
+		"price": 5000,
+		"stock": 2,
+		"category": "perifericos"
+	},
+	{
+		"id": 2,
+		"title": "monitor",
+		"description": "ips",
+		"code": 11,
+		"price": 20000,
+		"stock": 3,
+		"category": "perifericos"
+	},
+	{
+		"id": 3,
+		"title": "monitor",
+		"description": "ips 4K",
+		"code": 17,
+		"price": 40000,
+		"stock": 4,
+		"category": "perifericos"
+	},
+	{
+		"id": 4,
+		"title": "Parlante",
+		"description": "Pequeños altavoces con potente sonido",
+		"code": 5,
+		"price": 4000,
+		"stock": 2,
+		"category": "perifericos"
+	},
+	{
+		"id": 5,
+		"title": "Auriculares",
+		"description": "Inalambricos y con rgb",
+		"code": 2,
+		"price": 8000,
+		"stock": 10,
+		"category": "perifericos"
+	},
+	{
+		"id": 6,
+		"title": "Gabinete",
+		"description": "Formato de placa madre ITX",
+		"code": 1,
+		"price": 9000,
+		"stock": 10,
+		"category": "Componentes"
+	}
+]

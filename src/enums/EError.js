@@ -1,0 +1,10 @@
+export const EError={
+    ROUTING_ERROR:1,
+    DATABASE_ERROR:2,
+    AUTH_ERROR:3,
+    INVALID_JSON:4,
+    PASSWORD_ERROR:5,
+    ID_ERROR:6,
+    PRODUCT_ERROR:7,
+    CART_ERROR:8
+}

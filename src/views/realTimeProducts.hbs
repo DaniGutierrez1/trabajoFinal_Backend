@@ -1,0 +1,18 @@
+<h1>Estos son los productos en tiempo real</h1>
+<form action="post">
+
+    <input type="text" id="tituloProducto"placeholder="Nombre del producto"><br>
+    <input type="text" id="descripcionProducto" placeholder="Descripcion del producto"><br>
+
+    <button id="sendButton">Enviar</button>
+    
+</form>
+
+{{#each products}}
+    <p>Producto:{{this.producto}}</p>
+{{/each}}
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../../src/public/js/realTimeProducts.js"></script> 
+
+{{!-- Cambie el segundo script porque no me lo tomaba. Pense cambiar el primero tambien pero lo deje  --}}

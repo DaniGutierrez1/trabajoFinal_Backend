@@ -1,0 +1,34 @@
+<h1>Productos de la DB</h1>
+    <br/><br/>
+    Bienvenido {{user.first_name}}    
+    <br/><br/>
+
+    {{#if payload}}
+        {{#each payload}}
+            <li>
+                Titulo:{{this.title}},
+                    <ul>
+                        Descripcion:{{this.description}},
+                        Precio:{{this.price}},
+                        Stock:{{this.stock}}
+                        Categoria:{{this.category}}
+                    </ul>
+                    <button onclick="agregarAlCarrito('{{this._id}}')">Agregar</button>
+            </li>
+        {{/each}}
+        {{#if hasPrevPage}}
+            <a href="{{prevLink}}">Anterior</a>
+        {{/if}}
+
+        {{#if hasNextPage}}
+            <a href="{{nextLink}}">Siguiente</a>
+        {{/if}}
+        
+        
+    {{/if}}
+<script>
+    const agregarAlCarrito = (productId)=>{
+        console.log(`producto enviado al carrito ${productId}`);
+        // enviar la informacion con una promesa a la cual llamamos aca abajo. Fetch
+    }
+</script>
