@@ -51,7 +51,7 @@ const productsStorage=multer.diskStorage({
     }
 });
 
-export const uploaderProducts=multer({storage:profileStorage});
+export const uploaderProducts=multer({storage:productsStorage});
 
 const profileStorage=multer.diskStorage({
     destination: function(req,file,cb){
@@ -63,3 +63,14 @@ const profileStorage=multer.diskStorage({
 });
 
 export const uploaderProfile=multer({storage:profileStorage, fileFilter:multerProfileFilter});
+
+const documentsStorage=multer.diskStorage({
+    destination: function(req,file,cb){
+        cb(null,path.join(__dirname,"/multer/users/documents"))
+    },
+    filename: function(req,file,cb){
+        cb(null,`${req.user.email}-documento-${file.originalname}`)
+    }
+});
+
+export const uploaderDocuments=multer({storage:documentsStorage});

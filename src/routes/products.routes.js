@@ -2,6 +2,7 @@ import { Router } from "express";
 import { ProductsController } from "../controllers/products.controller.js";
 import { ProductsMongo } from "../dao/managers/mongo/productsMongo.js";
 import { checkRole, checkUserAuthenticated } from "../middlewares/auth.js";
+import { uploaderProducts } from "../utils.js";
 
 ///export const productsDao=new ProductsMongo()
 
@@ -24,7 +25,7 @@ router.get("/",ProductsController.getProducts);
 router.get("/:pid",ProductsController.getProduct);
 
 
-router.post("/",checkUserAuthenticated,checkRole(["admin","superadmin","premium"]),validateFields,ProductsController.createProduct);
+router.post("/",checkUserAuthenticated,checkRole(["admin","superadmin","premium"]),uploaderProducts.single("thumbnail"),validateFields,ProductsController.createProduct);
 
 router.put("/:pid",checkUserAuthenticated,checkRole(["admin","superadmin"]),validateFields,ProductsController.updateProduct)
 

@@ -4,6 +4,7 @@ import { UsersController } from "../controllers/users.controller.js";
 import { CustomError } from "../services/error/customError.service.js";
 import { EError } from "../enums/EError.js";
 import { createUserErrorMsg } from "../services/error/createUserError.service.js";
+import { uploaderDocuments } from "../utils.js";
 
 //PASAR TODO ESTO A SESSIONS. ES MAS FACIL YA QUE TENEMOS LOS VALIDADORES Y SOLO HACE FALTA ADAPTAR EL MANEJADOR DE ERRORES
 
@@ -29,5 +30,11 @@ router.post("/",(req,res)=>{
 })
 
 router.post("/premium/:uid",checkRole(["admin"]),UsersController.modifyRole)
+
+router.put("/:uid/documents",uploaderDocuments.fields([
+    {name:"identificacion",maxCount:1},
+    {name:"domicilio",maxCount:1},
+   {name:"estadoDeCuenta",maxCount:1}
+]),UsersController.uploaderDocuments)
 
 export { router as usersRouter};
